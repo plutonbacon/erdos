@@ -1,13 +1,14 @@
 module Erdos
   # Common calculations in Information Theory.
   module InfoTheory
-    # Entropy is a measure of unpredictability of information content.
+    # Computes shannon entropy or the measure of unpredictability
+    # of information content.
     #
     # @param s [String] a given input string
-    # @param ignore_case [Boolean]
-    # @param ignore_spaces [Boolean]
+    # @param ignore_case [Boolean] if true, normalize to lowercase
+    # @param ignore_spaces [Boolean] if true, remove all spaces
     #
-    # @return The bits of entropy.
+    # @return [Float] The bits of entropy contained within the input string.
     def self.calculate_shannon_entropy(s, ignore_case = false,
                                        ignore_spaces = false)
       s.downcase! if ignore_case
